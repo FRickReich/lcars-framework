@@ -1,6 +1,6 @@
 {
     "name": "lcars-framework",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "private": true,
     "dependencies": {
         "@testing-library/jest-dom": "^5.16.5",
@@ -21,8 +21,8 @@
     "scripts": {
         "storybook": "start-storybook -p 6006 -s public",
         "build-storybook": "build-storybook -s public -o docs",
+        "release": "standard-version && git push --follow-tags origin main",
         "build": "rm -rf dist && mkdir dist && babel ./src/**/ -d dist --copy-files",
-        "release": "semantic-release --branches main",
         "commit": "cz",
         "create": "sh create.sh",
         "prepare": "husky install",
