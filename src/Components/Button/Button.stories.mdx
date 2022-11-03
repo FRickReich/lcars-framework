@@ -26,19 +26,92 @@ export const Template = (args) => (
     </Story>
 </Canvas>
 
-### Custom className
-
 ### textVertical
+
+<Canvas>
+    <Story name="Vertical Text" args={{}}>
+        <Screen>
+            <Button textVertical="top" />
+            <Button textVertical="center" />
+            <Button textVertical="bottom" />
+        </Screen>
+    </Story>
+</Canvas>
 
 ### textHorizontal
 
+<Canvas>
+    <Story name="Horizontal Text" args={{}}>
+        <Screen>
+            <Button textHorizontal="left" />
+            <Button textHorizontal="center" />
+            <Button textHorizontal="right" />
+        </Screen>
+    </Story>
+</Canvas>
+
 ### rounded
+
+<Canvas>
+    <Story name="Rounded Sides" args={{}}>
+        <Screen>
+            <Button rounded="none" />
+            <Button rounded="left" />
+            <Button rounded="right" />
+            <Button rounded="both" />
+        </Screen>
+    </Story>
+</Canvas>
 
 ### label
 
-### animation
+<Canvas>
+    <Story name="Custom Label" args={{}}>
+        <Screen>
+            <Button label="Custom Button" />
+        </Screen>
+    </Story>
+</Canvas>
 
 ### divided
+
+<Canvas>
+    <Story name="Divider" args={{}}>
+        <Screen>
+            <Button divided="left" textHorizontal="left" />
+            <Button divided="right" />
+        </Screen>
+        <br />
+        <p>
+            A rounded button should have its divider on the oposite side of the
+            rounded and the same side as the text position.
+        </p>
+        <Screen>
+            <Button divided="left" rounded="right" textHorizontal="left" />
+            <Button divided="right" rounded="left" textHorizontal="right" />
+        </Screen>
+        <br />
+        <p>
+            The divider's size can also be set either small (default) or large.
+        </p>
+        <Screen>
+            <Button
+                divided="left"
+                rounded="right"
+                textHorizontal="left"
+                dividerSize="small"
+            />
+            <Button
+                divided="left"
+                rounded="right"
+                textHorizontal="left"
+                dividerSize="large"
+            />
+        </Screen>
+    </Story>
+</Canvas>
+
+### animation
 
 ## API
 
