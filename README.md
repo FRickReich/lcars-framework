@@ -1,3 +1,3 @@
 # LCARS-Framework
 
-Star Treks's LCARS Computer Display Design Language CSS framework
+React framework for Star Treks's LCARS Computer Display Design Language
