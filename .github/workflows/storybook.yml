@@ -1,0 +1,25 @@
+on:
+    push:
+        branches:
+            - develop
+
+name: Publish stories if changed
+
+jobs:
+    build-and-deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v3
+
+            - name: Build storybook
+              run: |
+                  npm install
+                  npm run build
+
+            - name: Deploy storybook
+              uses: JamesIves/github-pages-deploy-action@v4
+              with:
+                  token: ${{ secrets.ACCESS_TOKEN }}
+                  folder: docs/
+                  branch: storybook

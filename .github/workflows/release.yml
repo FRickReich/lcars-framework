@@ -1,0 +1,32 @@
+name: Release npm package
+
+on:
+    push:
+        branches:
+            - 'main'
+    pull_request:
+        branches: '*'
+jobs:
+    release:
+        name: publish 🚀
+        runs-on: ubuntu-latest
+        if: ${{ github.ref == 'refs/heads/main' }}
+        steps:
+            - uses: actions/checkout@v3
+            - name: Node.js 🤖
+              uses: actions/setup-node@v3
+              with:
+                  node-version: '16.x'
+                  registry-url: 'https://npm.pkg.github.com'
+                  # Defaults to the user or organization that owns the workflow file
+            - name: Install dependencies
+              run: npm ci
+            - name: build package 📦
+              run: npm run build
+            - name: semantic-release
+              run: npm run release
+              env:
+                  #TO DO - Not all three tokens *should* be needed
+                  NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                  #NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
