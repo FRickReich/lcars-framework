@@ -21,6 +21,7 @@
     "scripts": {
         "storybook": "start-storybook -p 6006 -s public",
         "build-storybook": "build-storybook -s public -o docs",
+        "build": "rm -rf dist && mkdir dist && babel ./src/**/ -d dist --copy-files",
         "release": "semantic-release --branches main",
         "commit": "cz",
         "create": "sh create.sh",
