@@ -1,0 +1,99 @@
+@use '../../global-styles/' as *;
+
+.Button {
+    position: relative;
+    box-sizing: border-box;
+    background: $color_yellow;
+    color: $color_background;
+    // border: 2px solid $color_yellow;
+    border: none;
+    text-transform: uppercase;
+    padding: 0;
+    margin: 0;
+    min-height: 2em;
+    max-width: 10em;
+    min-width: 7em;
+    font-family: 'Okuda';
+    font-weight: 400;
+    font-size: 1.2em;
+    border-radius: 0.15em;
+    display: flex;
+
+    &.Button__textVertical-top {
+        align-items: start;
+    }
+    &.Button__textVertical-center {
+        align-items: center;
+    }
+    &.Button__textVertical-bottom {
+        align-items: end;
+    }
+    &.Button__textHorizontal-left {
+        justify-content: start;
+    }
+    &.Button__textHorizontal-center {
+        justify-content: center;
+    }
+    &.Button__textHorizontal-right {
+        justify-content: end;
+    }
+
+    &.Button__rounded-left {
+        border-top-left-radius: 3em;
+        border-bottom-left-radius: 3em;
+
+        .Button__text {
+            padding-left: 1.5em;
+        }
+    }
+    &.Button__rounded-right {
+        border-top-right-radius: 3em;
+        border-bottom-right-radius: 3em;
+
+        .Button__text {
+            padding-right: 1.5em;
+        }
+    }
+
+    &.Button__divider-left {
+        .Button__text {
+            padding-left: 2.25em;
+            padding-right: 1.5em;
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            z-index: 1;
+            display: block;
+            left: 1.75em;
+            background: black;
+            height: 100%;
+            width: 0.25em;
+        }
+    }
+
+    &.Button__divider-right {
+        .Button__text {
+            padding-right: 2.25em;
+            padding-left: 1.5em;
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            z-index: 1;
+            display: block;
+            right: 1.75em;
+            background: black;
+            height: 100%;
+            width: 0.25em;
+        }
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    .Button__text {
+        padding: $text-padding;
+    }
+}

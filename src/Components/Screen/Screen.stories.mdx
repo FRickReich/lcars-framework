@@ -1,0 +1,34 @@
+import { Canvas, Meta, Story, Props } from '@storybook/addon-docs'
+import { Screen } from './Screen';
+
+export const Template = (args) => (
+    <Screen { ...args } />
+);
+
+<Meta title='Components/Screen' component={ Screen } />
+
+# Screen
+
+...
+
+## Examples
+
+### Default
+
+...
+
+<Canvas>
+    <Story
+        name="Default"
+        args={{
+            
+        }}
+    >
+        { Template.bind({}) }
+    </Story>
+</Canvas>
+
+## API
+
+<Props of={ Screen } />
+
