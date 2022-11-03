@@ -3,6 +3,7 @@
 .DividingHeader {
     display: flex;
     height: 1.5em;
+    margin: 0.25em;
     overflow: hidden;
     font-family: 'Okuda';
     font-weight: 400;
@@ -23,7 +24,6 @@
 
     .DividingHeader__spaceDivider {
         flex-grow: 1;
-        height: 10px;
         height: 100%;
         background: $color_yellow;
     }

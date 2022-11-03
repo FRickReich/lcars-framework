@@ -26,6 +26,25 @@ export const Template = (args) => (
     </Story>
 </Canvas>
 
+leftTitle: PropTypes.string,
+centerTitle: PropTypes.string,
+rightTitle: PropTypes.string,
+
+<Canvas>
+    <Story name="Header Title" args={{}}>
+        <Screen>
+            <DividingHeader leftTitle="Left Title" />
+            <DividingHeader centerTitle="Center Title" />
+            <DividingHeader rightTitle="Right Title" />
+        </Screen>
+        <br />
+        <p>Multiple texts can be used on the same header.</p>
+        <Screen>
+            <DividingHeader leftTitle="Left Title" rightTitle="Right Title" />
+        </Screen>
+    </Story>
+</Canvas>
+
 ## API
 
 <Props of={DividingHeader} />
