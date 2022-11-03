@@ -12,6 +12,7 @@ export const Button = ({
     label,
     animation,
     divided,
+    dividerSize,
     ...props
 }) => {
     return (
@@ -36,7 +37,11 @@ export const Button = ({
                 ${className !== undefined ? className : ''} 
                 Button__textVertical-${textVertical}
                 Button__textHorizontal-${textHorizontal}
-                ${divided !== 'none' ? `Button__divider-${divided}` : ''}
+                ${
+                    divided !== 'none'
+                        ? `Button__divider-${divided} Button__divider-${dividerSize}`
+                        : ''
+                }
                 ${rounded === 'left' ? 'Button__rounded-left' : ''}
                 ${rounded === 'right' ? 'Button__rounded-right' : ''}
                 ${
@@ -62,6 +67,7 @@ Button.propTypes = {
     label: PropTypes.string.isRequired,
     animation: PropTypes.bool,
     divided: PropTypes.oneOf(['none', 'left', 'right']),
+    dividerSize: PropTypes.oneOf(['large', 'small']),
 };
 
 Button.defaultProps = {
@@ -72,4 +78,5 @@ Button.defaultProps = {
     rounded: 'none',
     animation: false,
     divided: 'none',
+    dividerSize: 'small',
 };

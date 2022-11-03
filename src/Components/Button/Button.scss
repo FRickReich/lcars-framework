@@ -56,36 +56,72 @@
     }
 
     &.Button__divider-left {
-        .Button__text {
-            padding-left: 2.25em;
-            padding-right: 1.5em;
+        &.Button__divider-small {
+            .Button__text {
+                padding-left: 1.25em;
+                padding-right: 1.5em;
+            }
+            &::after {
+                content: '';
+                position: absolute;
+                z-index: 1;
+                display: block;
+                left: 0.75em;
+                background: black;
+                height: 100%;
+                width: 0.25em;
+            }
         }
-        &::after {
-            content: '';
-            position: absolute;
-            z-index: 1;
-            display: block;
-            left: 1.75em;
-            background: black;
-            height: 100%;
-            width: 0.25em;
+        &.Button__divider-large {
+            .Button__text {
+                padding-left: 2.25em;
+                padding-right: 1.5em;
+            }
+            &::after {
+                content: '';
+                position: absolute;
+                z-index: 1;
+                display: block;
+                left: 1.75em;
+                background: black;
+                height: 100%;
+                width: 0.25em;
+            }
         }
     }
 
     &.Button__divider-right {
-        .Button__text {
-            padding-right: 2.25em;
-            padding-left: 1.5em;
+        &.Button__divider-small {
+            .Button__text {
+                padding-right: 1.25em;
+                padding-left: 1.5em;
+            }
+            &::after {
+                content: '';
+                position: absolute;
+                z-index: 1;
+                display: block;
+                right: 0.75em;
+                background: black;
+                height: 100%;
+                width: 0.25em;
+            }
         }
-        &::after {
-            content: '';
-            position: absolute;
-            z-index: 1;
-            display: block;
-            right: 1.75em;
-            background: black;
-            height: 100%;
-            width: 0.25em;
+        &.Button__divider-large {
+            .Button__text {
+                padding-right: 2.25em;
+                padding-left: 1.5em;
+            }
+            &::after {
+                content: '';
+                position: absolute;
+                z-index: 1;
+                display: block;
+                right: 1.75em;
+                background: black;
+                height: 100%;
+                width: 0.25em;
+            }
         }
     }
 
